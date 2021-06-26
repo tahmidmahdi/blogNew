@@ -10,11 +10,12 @@ const BlogDetails = () => {
 
 
     // const data =   useSelector((state) => {
-    //     return state.stat
+    //     return state.state
+    // }
 
-    // let value = data.find(p => p.id == e);
-    //         console.log(value);
-    //         setPost(value)
+    // let value = data.find(p => p.id === e)
+    // console.log(value);
+    // setPost(value)
 
     useEffect(() => {
 

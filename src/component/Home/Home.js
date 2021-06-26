@@ -14,7 +14,7 @@ const Home = () => {
     },[])
     console.log(post);
     return (
-        <div className="d-flex justify-content-around mt-5 ">
+        <div className="d-flex justify-content-around mt-5 home">
             {
                 post.map(data => <BlogCart data={data}></BlogCart>)
             }
