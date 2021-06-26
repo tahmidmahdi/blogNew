@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const BlogDetails = () => {
-    let { id } = useParams();
-    console.log('from', id);
+    let { e } = useParams();
+    console.log('from', e);
+    const [post, setPost] = useState({})
+    useEffect(() => {
+        fetch(`http://localhost:4000/home`)
+        .then(res => res.json())
+        .then(data => {
+            let value = data.find(p => p.id == e);
+            console.log(value);
+            setPost(value)
+        })
+    },[])
 
+    
     return (
-        <div>
-            hello
+        <div className="text-center">
+            <h1 className="text-center mt-5">{post.title?.rendered}</h1>
+            <img className="mt-5" style={{width:'400px'}} src={post._embedded?.['wp:featuredmedia'][0]?.source_url} alt="" />
+            <p className="text-center mt-5">{post._embedded?.author[0]?.name}</p>
         </div>
     );
 };

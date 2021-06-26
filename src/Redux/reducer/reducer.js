@@ -6,7 +6,7 @@ const addState = (state= initialState , action) =>{
         case 'ADD_TO_STATE': {
             const newState = {
                 ...state,
-                state: [...state.cart, action.payload]
+                state: [...state.state, action.payload]
             }
             return newState;
         }
