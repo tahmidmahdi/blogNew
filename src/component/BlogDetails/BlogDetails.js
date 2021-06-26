@@ -1,12 +1,25 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 const BlogDetails = () => {
     let { e } = useParams();
     console.log('from', e);
     const [post, setPost] = useState({})
+
+
+    // const data =   useSelector((state) => {
+    //     return state.stat
+
+    // let value = data.find(p => p.id == e);
+    //         console.log(value);
+    //         setPost(value)
+
     useEffect(() => {
+
+        
+
         fetch(`http://localhost:4000/home`)
         .then(res => res.json())
         .then(data => {
