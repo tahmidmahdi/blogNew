@@ -18,7 +18,7 @@ const BlogDetails = () => {
 
     
     return (
-        <div className="text-center">
+        <div className="text-center cart-div">
             <h1 className="text-center mt-5">{post.title?.rendered}</h1>
             <img className="mt-5" style={{width:'400px'}} src={post._embedded?.['wp:featuredmedia'][0]?.source_url} alt="" />
             <p className="text-center mt-5">{post._embedded?.author[0]?.name}</p>

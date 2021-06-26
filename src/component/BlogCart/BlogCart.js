@@ -1,8 +1,10 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addToState } from '../../Redux/actions/addToStateAction';
-
+import './BlogCart.css'
 const BlogCart = ({ data }) => {
     let history = useHistory();
     const dispatch = useDispatch()
@@ -23,7 +25,7 @@ const BlogCart = ({ data }) => {
                     <p>{date}</p>
                     <h5 class="card-title">{data.title.rendered}</h5>
                     <p class="card-text">...</p>
-                    <a onClick={()=>handleClick(data.id)} href="#" class="btn btn-primary">ReadMore</a>
+                    <a onClick={()=>handleClick(data.id)} href="#" class="button"><FontAwesomeIcon icon={faArrowRight} />  ReadMore</a>
                 </div>
             </div>
         </div>
