@@ -10,8 +10,8 @@ const BlogCart = ({ data }) => {
     const dispatch = useDispatch()
     const handleClick = (e) =>{
         console.log(e);
-        dispatch(addToState)
-        history.push(`/home/`+parseInt(e));
+        dispatch(addToState(e))
+        history.push(`/home/`+parseInt(e.id));
 
     }
     console.log(data);
@@ -25,7 +25,7 @@ const BlogCart = ({ data }) => {
                     <p>{date}</p>
                     <h5 class="card-title">{data.title.rendered}</h5>
                     <p class="card-text">...</p>
-                    <a onClick={()=>handleClick(data.id)} href="#" class="button"><FontAwesomeIcon icon={faArrowRight} />  ReadMore</a>
+                    <a onClick={()=>handleClick(data)} href="#" class="button"><FontAwesomeIcon icon={faArrowRight} />  ReadMore</a>
                 </div>
             </div>
         </div>
